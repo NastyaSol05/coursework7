@@ -13,6 +13,8 @@ ipython = "^8.32.0"
 redis = "^5.2.1"
 pillow = "^11.1.0"
 psycopg2-binary = "^2.9.10"
+shell = "^1.0.1"
+six = "^1.17.0"
 
 
 [tool.poetry.group.lint.dependencies]

@@ -1,0 +1,30 @@
+{% extends 'mailing/base.html' %}
+
+{% block title %}Управление рассылками{% endblock %}
+
+{% block content %}
+<div class="album py-5 bg-body-tertiary">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">№</th>
+            <th scope="col">Получатель</th>
+            <th scope="col">Время отправки сообщения</th>
+            <th scope="col">Статус</th>
+            <th scope="col">Ответ</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for emailAttempt in object_list %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ emailAttempt.owner }}</td>
+            <td>{{ emailAttempt.attempt_time }}</td>
+            <td>{{ emailAttempt.status }}</td>
+            <td>{{ emailAttempt.server_response }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
